@@ -1,0 +1,57 @@
+.grids {
+  background-color: #7f97a0;
+  border-radius: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  height: 300px;
+  margin: 0 auto 6em;
+  padding: 5px;
+  width: 300px;
+}
+
+.grid {
+  background-color: #fff;
+  border-radius: 6px;
+  height: 90px;
+  margin: 5px;
+  width: 90px;
+  position: relative;
+}
+
+.grid:hover {
+  background-color: #eedc8e;
+  transition: background-color 0.3s;
+}
+
+.grid.circle::before,
+.grid.times::before,
+.grid.times::after {
+  content: "";
+  left: 50%;
+  position: absolute;
+  top: 50%;
+}
+
+.grid.circle::before {
+  border-radius: 50%;
+  border: 8px solid #000;
+  height: 44px;
+  transform: translate(-50%, -50%);
+  width: 44px;
+}
+
+.grid.times::before {
+  background-color: #000;
+  border-radius: 4px;
+  height: 65px;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 8px;
+}
+
+.grid.times::after {
+  background-color: #000;
+  border-radius: 4px;
+  height: 65px;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  width: 8px;
+}
