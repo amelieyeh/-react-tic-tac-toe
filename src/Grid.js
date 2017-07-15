@@ -7,8 +7,17 @@ class Grid extends Component {
   }
 
   render() {
+    let gridValueClass;
+    if(this.props.value === '') {
+      gridValueClass = 'grid';
+    } else if(this.props.value === 'x') {
+      gridValueClass = 'grid times';
+    } else {
+      gridValueClass = 'grid circle';
+    }
+
     return (
-      <div className={"grid " + this.props.loc} onClick={() => this.gridClick(this.props)}>{this.props.value}</div>
+      <div className={gridValueClass} onClick={() => this.gridClick(this.props)}></div>
     );
   }
 }
